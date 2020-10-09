@@ -9,6 +9,7 @@ import { Vector as VectorSource } from "ol/source";
 import GeoJSON from 'ol/format/GeoJSON';
 import { Style, Stroke, Fill } from "ol/style";
 
+
 const draw = (props) => {
   d3.select(".map > *").remove();
   let map = new Map({
@@ -34,7 +35,7 @@ const draw = (props) => {
 
   const QuangNinh = new VectorLayer({
     source: new VectorSource({
-      url: "./QuangNinhMap.geojson",
+      url: "./QuangNinhMap.json",
       format: new GeoJSON(),
     }),
     visible: true,
