@@ -26,6 +26,7 @@ export default class Welcome extends Component {
           <Space size="middle">
             <Button
               danger
+              disabled
               type="primary"
               shape="round"
               icon={<UploadOutlined />}
