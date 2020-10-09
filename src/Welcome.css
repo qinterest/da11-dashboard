@@ -1,0 +1,58 @@
+.headerTitle {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #f2f2f2;
+}
+
+#welcome-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 50%;
+  color: #f1f1f1;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.welcome-footer {
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+  color: #ffffffB3;
+  width: 100%;
+  padding: 20px;
+}
+
+.welcome-logo {
+  position: fixed;
+  padding: 15px;
+  opacity: 0.95;
+}
+
+img {
+  max-width: 60%;
+  height: auto;
+}
+
+.welcome-link {
+  font-family: "Roboto", sans-serif;
+  color: #f1f1f1;
+}
+
+a {
+  color: #ffffffB3;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  color: #f1f1f1;
+}
