@@ -82,6 +82,7 @@ export default class Da11Left extends Component {
               className="sideButton"
               icon={<PlusOutlined />}
               onClick={this.props.addSelected}
+              disabled={this.props.noVis}
             />
           </Tooltip>
           <Tooltip title="Variable Info" placement="right">

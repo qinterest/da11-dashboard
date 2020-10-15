@@ -15,11 +15,12 @@ const data = testData;
 export default class Dashboard extends Component {
   state = {
     collapsed: false,
-    selectVar: "var1-1",
+    selectVar: "",
     viewVar: "",
     comparedVar: [],
     currentYr: "2019",
     comparedYr: "2010",
+    noVis: true,
   };
 
   toggle = () => {
@@ -54,6 +55,9 @@ export default class Dashboard extends Component {
       this.setState({
         comparedVar: [],
       });
+      this.setState({
+        noVis: true
+      })
       message.info(`Clear all.`);
     }
     if (value.toString() === "clearCompared") {
@@ -74,6 +78,7 @@ export default class Dashboard extends Component {
     const sv = this.state.selectVar;
     this.setState({
       viewVar: sv,
+      noVis: false,
     });
 
     message.info(`View ${sv}`);
@@ -116,6 +121,7 @@ export default class Dashboard extends Component {
             style={{ backgroundColor: "#ffffff" }}
           >
             <Da11Left
+              noVis = {this.state.noVis}
               changeVar={this.changeVar}
               clearVar={this.clearVar}
               viewSelected={this.viewSelected}
