@@ -56,8 +56,8 @@ export default class Dashboard extends Component {
         comparedVar: [],
       });
       this.setState({
-        noVis: true
-      })
+        noVis: true,
+      });
       message.info(`Clear all.`);
     }
     if (value.toString() === "clearCompared") {
@@ -121,7 +121,7 @@ export default class Dashboard extends Component {
             style={{ backgroundColor: "#ffffff" }}
           >
             <Da11Left
-              noVis = {this.state.noVis}
+              noVis={this.state.noVis}
               changeVar={this.changeVar}
               clearVar={this.clearVar}
               viewSelected={this.viewSelected}

@@ -1,10 +1,6 @@
 import React from "react";
-import { Menu} from "antd";
-import {
-  HomeOutlined,
-  DollarOutlined,
-  CloudOutlined,
-} from "@ant-design/icons";
+import { Menu } from "antd";
+import { HomeOutlined, DollarOutlined, CloudOutlined } from "@ant-design/icons";
 import "./Da11Left.css";
 
 const { SubMenu } = Menu;
@@ -32,7 +28,7 @@ export default function DaMenu(props) {
         {d.name}
       </Menu.Item>
     ));
-  
+
   return (
     <Menu
       onClick={props.handleClick}
