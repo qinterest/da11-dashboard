@@ -70,7 +70,7 @@ export default class Dashboard extends Component {
         comparedVar: cv,
       });
 
-      message.info(`Clear all compared.`);
+      message.info(`Clear compared variables.`);
     }
   };
 
@@ -81,7 +81,8 @@ export default class Dashboard extends Component {
       noVis: false,
     });
 
-    message.info(`View ${sv}`);
+    const viewObj = data.filter((d) => d.key.toString() === sv)[0];
+    message.info(`View ${viewObj.name}`);
 
     let cv = [];
     if (!cv.includes(sv)) {
@@ -100,7 +101,8 @@ export default class Dashboard extends Component {
       this.setState({
         comparedVar: cv,
       });
-      message.info(`Add ${sv} for comparision`);
+      const viewObj = data.filter((d) => d.key.toString() === sv)[0];
+      message.info(`Add ${viewObj.name} for comparision`);
     }
   };
 
