@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import "./style.css";
 
+// #TODO layerSwithch https://medium.com/gis-tips/openlayers-3-adding-a-layer-switcher-9b63ae9e5253
 const draw = (props) => {
   d3.select(".vis-down > *").remove();
   if (props.dataVis.data.length) {
