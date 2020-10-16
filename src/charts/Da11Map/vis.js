@@ -24,7 +24,7 @@ const draw = (props) => {
     ],
     view: new View({
       center: fromLonLat([107.25, 21]),
-      zoom: 10,
+      zoom: 12,
     }),
   });
 

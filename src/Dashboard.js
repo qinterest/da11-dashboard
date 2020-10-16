@@ -15,7 +15,7 @@ const data = testData;
 export default class Dashboard extends Component {
   state = {
     collapsed: false,
-    selectVar: "",
+    selectVar: "var1-1",
     viewVar: "",
     comparedVar: [],
     currentYr: "2019",

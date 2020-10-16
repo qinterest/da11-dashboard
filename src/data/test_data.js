@@ -38,12 +38,12 @@ const testData = [
       {
         geourl: "./geodata/mangroves-2015.geojson",
         title: "mangroves-2015",
-        color: "[6, 68, 6, 1]",
+        color: "#91cf60",
       },
       {
         geourl: "./geodata/mangroves-2018.geojson",
         title: "mangroves-2018",
-        color: "[16, 233, 16, 1]",
+        color: "#ffffbf",
       }
     ],
     geourl: "./geodata/mangroves-2018.geojson",
