@@ -14,7 +14,8 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "react-router-dom": "5.2.0",
-    "ol":"6.4.3"
+    "ol":"6.4.3",
+    "ol-layerswitcher":"3.7.0"
   },
   "scripts": {
     "start": "craco start",

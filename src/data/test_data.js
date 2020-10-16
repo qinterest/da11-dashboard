@@ -34,6 +34,19 @@ const testData = [
     unit: "km2",
     key: "var1-4",
     cat: "1",
+    geodata:[
+      {
+        geourl: "./geodata/mangroves-2015.geojson",
+        title: "mangroves-2015",
+        color: "[6, 68, 6, 1]",
+      },
+      {
+        geourl: "./geodata/mangroves-2018.geojson",
+        title: "mangroves-2018",
+        color: "[16, 233, 16, 1]",
+      }
+    ],
+    geourl: "./geodata/mangroves-2018.geojson",
   },
   {
     2010: "82154",

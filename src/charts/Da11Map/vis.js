@@ -1,14 +1,17 @@
 import * as d3 from "d3";
+import { message } from "antd";
 
 import OSM from "ol/source/OSM";
 import { Map, View } from "ol";
-import { Vector as VectorLayer } from 'ol/layer';
+import { Vector as VectorLayer } from "ol/layer";
 import { Tile, VectorImage } from "ol/layer";
 import { fromLonLat } from "ol/proj";
 import { Vector as VectorSource } from "ol/source";
-import GeoJSON from 'ol/format/GeoJSON';
+import GeoJSON from "ol/format/GeoJSON";
 import { Style, Stroke, Fill } from "ol/style";
 
+import LayerSwitcher from "ol-layerswitcher";
+import "./ol-layerswitcher.css";
 
 const draw = (props) => {
   d3.select(".map > *").remove();
@@ -35,17 +38,47 @@ const draw = (props) => {
 
   const QuangNinh = new VectorLayer({
     source: new VectorSource({
-      url: "./QuangNinhMap.json",
+      url: "./geodata/QuangNinhBoundry.json",
       format: new GeoJSON(),
     }),
     visible: true,
-    title: "QuangNinh",
+    title: "QuangNinh Boundry",
     style: new Style({
       stroke: strokeStyle,
     }),
   });
 
   map.addLayer(QuangNinh);
+  if (props.dataVis.data.length) {
+    const viewVar = props.dataVis.viewVar.toString(),
+      data = props.dataVis.data;
+    const viewObj = data.filter((d) => d.key.toString() === viewVar)[0];
+
+    if (viewObj.geodata) {
+      viewObj.geodata.forEach((d) => {
+        map.addLayer(
+          new VectorLayer({
+            source: new VectorSource({
+              url: d.geourl,
+              format: new GeoJSON(),
+            }),
+            visible: true,
+            title: d.title,
+            style: new Style({
+              fill: new Fill({
+                color: d.color,
+              }),
+            }),
+          })
+        );
+      });
+    } else {
+      message.info(`No geo-spatial data for ${viewObj.name}.`);
+    }
+  }
+
+  var layerSwitcher = new LayerSwitcher();
+  map.addControl(layerSwitcher);
 };
 
 export default draw;

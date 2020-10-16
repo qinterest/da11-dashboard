@@ -99,7 +99,7 @@ export default class Da11Left extends Component {
               onClose={this.onClose}
               visible={this.state.visible}
             >
-              <p>Detailed Description of variables</p>
+              <p>Detailed Description of variables(On process)</p>
             </Drawer>
           </Tooltip>
           <Dropdown overlay={this.menuClear}>

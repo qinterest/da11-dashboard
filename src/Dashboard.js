@@ -140,7 +140,13 @@ export default class Dashboard extends Component {
                       className="site-layout-background"
                       style={{ minHeight: 510 }}
                     >
-                      <Da11Up viewVar={this.state.viewVar} />
+                      <Da11Up
+                        viewVar={this.state.viewVar}
+                        comparedVar={this.state.comparedVar}
+                        data={data.filter((d) =>
+                          this.state.comparedVar.includes(d.key)
+                        )}
+                      />
                     </div>
                   </Content>
                   <Content style={{ height: 280 }}>
