@@ -215,7 +215,7 @@ const testData = [
   {
     2010: 19.9,
     2019: 35.6,
-    9999: 35.6,
+    9999: 37.6,
     name: "Precentage of trained workers",
     unit: "%",
     key: "var3-1",
@@ -224,7 +224,7 @@ const testData = [
   {
     2010: "3,125.20",
     2019: "5,550.60",
-    9999: 5002.1,
+    9999: "5002.1",
     name:
       "Average income of employed workers by agriculture, forestry and fishing",
     unit: "Thous. dongs",
