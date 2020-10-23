@@ -26,13 +26,6 @@ export default class Da11Header extends Component {
         return (
             <div>
                 <text className='headerTitle'>Ocean accounts dashboard</text>
-                <div className='selectCurrent' style={{float:'right'}} >
-                        <Select defaultValue="2019" onChange={this.handleClick} size='large' bordered={false} style={{color: '#F2F2F2', width: '100px',fontSize:'18px'}} showArrow={false}>
-                            <Option value="2019">2019</Option>
-                            <Option value="2010">2010</Option>
-                            <Option value="9999">Scenario 1</Option>
-                        </Select>
-                </div>
             </div>
             
         )

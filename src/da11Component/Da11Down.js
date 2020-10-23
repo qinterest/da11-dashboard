@@ -20,6 +20,12 @@ export default class Da11Down extends Component {
         this.props.changeComparedYr(value);
     };
 
+    handleBase = (value) => {
+        var info= (Number(value)===9999) ? 'Scenario 1': value;
+        message.info(`Visualization for ${info}`);
+        this.props.changeCurrentYr(value);
+    };
+
     render() {
         const dataVis = this.props,
             width = 1080,
@@ -29,10 +35,16 @@ export default class Da11Down extends Component {
                 <div id='downTitle' style= {{padding:5}}>
                     <text className='downTitle'>Changes in accounts</text>
                     <div className='selectBase' style={{float:'right'}}>
-                        <Select defaultValue="2010" onChange={this.handleClick} bordered={false} style={{width: '133px'}}>
-                            <Option value="2019">Base:2019</Option>
-                            <Option value="2010">Base:2010</Option>
-                            <Option value="9999">Base:Scenario 1</Option>
+                    <Select defaultValue="2019" onChange={this.handleBase} bordered={false} style={{width: '100px'}}>
+                            <Option value="2019">2019</Option>
+                            <Option value="2010">2010</Option>
+                            <Option value="9999">Scenario 1</Option>
+                        </Select>
+                        Compared to
+                        <Select defaultValue="2010" onChange={this.handleClick} bordered={false} style={{width: '100px'}}>
+                            <Option value="2019">2019</Option>
+                            <Option value="2010">2010</Option>
+                            <Option value="9999">Scenario 1</Option>
                         </Select>
                     </div>
                 </div>

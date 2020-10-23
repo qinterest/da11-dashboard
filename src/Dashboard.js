@@ -5,7 +5,7 @@ import Da11Header from "./da11Component/Da11Header";
 import Da11Left from "./da11Component/Da11Left";
 import Da11Down from "./da11Component/Da11Down";
 import Da11Up from "./da11Component/Da11Up";
-import testData from "./data/test_data.js";
+import testData from "./data/data1023.js";
 // import { generate, presetPalettes } from '@ant-design/colors';
 // const colorPlatte = generate('#009edb');
 
@@ -128,6 +128,7 @@ export default class Dashboard extends Component {
               clearVar={this.clearVar}
               viewSelected={this.viewSelected}
               addSelected={this.addSelected}
+              selectVar={this.state.selectVar}
               data={data}
             />
           </Sider>
@@ -142,7 +143,6 @@ export default class Dashboard extends Component {
                     >
                       <Da11Up
                         viewVar={this.state.viewVar}
-                        comparedVar={this.state.comparedVar}
                         data={data.filter((d) =>
                           this.state.comparedVar.includes(d.key)
                         )}
@@ -163,6 +163,7 @@ export default class Dashboard extends Component {
                         data={data.filter((d) =>
                           this.state.comparedVar.includes(d.key)
                         )}
+                        changeCurrentYr={this.changeCurrentYr}
                       />
                     </div>
                   </Content>

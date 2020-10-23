@@ -11,7 +11,9 @@ import {
 import "./Da11Left.css";
 import "./DaMenu.js";
 import DaMenu from "./DaMenu.js";
+import DaDrawer from "./DaDrawer";
 
+//#TODO:visble to parent
 export default class Da11Left extends Component {
   constructor(props) {
     super(props);
@@ -92,15 +94,12 @@ export default class Da11Left extends Component {
               icon={<InfoCircleOutlined />}
               onClick={this.showDrawer}
             />
-            <Drawer
-              title="Variable Info"
-              placement="right"
-              closable={false}
+            <DaDrawer
+              data={this.props.data}
+              selectVar={this.props.selectVar}
               onClose={this.onClose}
               visible={this.state.visible}
-            >
-              <p>Detailed Description of variables(On process)</p>
-            </Drawer>
+            />
           </Tooltip>
           <Dropdown overlay={this.menuClear}>
             <Button block className="sideButton" icon={<ClearOutlined />} />
