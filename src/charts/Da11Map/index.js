@@ -4,11 +4,13 @@ import "./style.css";
 
 export default class DownChart extends PureComponent {
   componentDidMount() {
-      draw(this.props);
+    draw(this.props);
   }
 
-  componentDidUpdate(preProps) {
+  componentDidUpdate(prevProps) {
+    if (this.props.dataVis.viewVar !== prevProps.dataVis.viewVar) {
       draw(this.props);
+    }
   }
 
   render() {

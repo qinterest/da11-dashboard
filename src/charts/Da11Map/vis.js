@@ -4,15 +4,16 @@ import { message } from "antd";
 import OSM from "ol/source/OSM";
 import { Map, View } from "ol";
 import { Vector as VectorLayer } from "ol/layer";
-import { Tile, VectorImage } from "ol/layer";
+import { Tile } from "ol/layer";
 import { fromLonLat } from "ol/proj";
 import { Vector as VectorSource } from "ol/source";
 import GeoJSON from "ol/format/GeoJSON";
-import { Style, Stroke, Fill } from "ol/style";
+import { Style, Stroke, Fill, Icon } from "ol/style";
 
 import LayerSwitcher from "ol-layerswitcher";
 import "./ol-layerswitcher.css";
 
+//#FIXME:ADD seagrass 
 const draw = (props) => {
   d3.select(".map > *").remove();
   let map = new Map({
@@ -24,7 +25,7 @@ const draw = (props) => {
     ],
     view: new View({
       center: fromLonLat([107.25, 21]),
-      zoom: 12,
+      zoom: 11,
     }),
   });
 
@@ -56,21 +57,41 @@ const draw = (props) => {
 
     if (viewObj.geodata) {
       viewObj.geodata.forEach((d) => {
-        map.addLayer(
-          new VectorLayer({
-            source: new VectorSource({
-              url: d.geourl,
-              format: new GeoJSON(),
-            }),
-            visible: true,
-            title: d.title,
-            style: new Style({
-              fill: new Fill({
-                color: d.color,
+        if (d.image) {
+          const icon = new Icon(d.image);
+          map.addLayer(
+            new VectorLayer({
+              source: new VectorSource({
+                url: d.geourl,
+                format: new GeoJSON(),
               }),
-            }),
-          })
-        );
+              visible: true,
+              title: d.title,
+              style: new Style({
+                fill: new Fill({
+                  color: d.color,
+                  image: icon,
+                }),
+              }),
+            })
+          );
+        } else {
+          map.addLayer(
+            new VectorLayer({
+              source: new VectorSource({
+                url: d.geourl,
+                format: new GeoJSON(),
+              }),
+              visible: true,
+              title: d.title,
+              style: new Style({
+                fill: new Fill({
+                  color: d.color,
+                }),
+              }),
+            })
+          );
+        }
       });
     } else {
       message.info(`No geo-spatial data for ${viewObj.name}.`);
