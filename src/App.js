@@ -3,7 +3,7 @@ import "./App.less";
 import Dashboard from "./Dashboard";
 import Welcome from "./Welcome";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 export default class App extends Component {
   render() {
