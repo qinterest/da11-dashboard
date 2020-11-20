@@ -3,23 +3,38 @@
 ![ESCAP-logo](https://www.unescap.org/themes/custom/escap2020/logo.png)
 ![Decade-of-ocean](https://www.unescap.org/sites/default/d8files/SDG_Decade_of_Action_E2x.png)
 
-DA11 here.
-
 ## Table of Contents
 
 - [DA11-dashboard](#da11-dashboard)
-  - [Table of Contents](#table-of-contents)
-  - [Technical guide](#technical-guide)
-    - [Introduction](#introduction)
-    - [Usage](#usage)
-    - [Files & directories](#files--directories)
-  - [Possible future work](#possible-future-work)
-  - [Background material](#background-material)
-  - [Contributor](#contributor)
+	- [Table of Contents](#table-of-contents)
+	- [Introduction](#introduction)
+		- [Objective](#objective)
+		- [Main data source](#main-data-source)
+	- [Technical guide](#technical-guide)
+		- [Main tools](#main-tools)
+		- [Usage](#usage)
+		- [Files & directories](#files--directories)
+	- [Possible future work](#possible-future-work)
+	- [Background material](#background-material)
+	- [Contributor](#contributor)
+
+## Introduction
+
+### Objective
+
+- Highlight the importance of the ocean/ocean economy/ocean ecosystem
+- Show the comprehensiveness of ocean accounts (compared to system of national accounts)
+- Explain how statistical harmonization based on ocean accounting can be presented
+
+### Main data source
+
+- Statistical data from the General Statistic Office of Viet Nam
+- Remote sensing data
+- Geospatial data from the pilot study
 
 ## Technical guide
 
-### Introduction
+### Main tools
 
 - The dashboard is developed using [React](https://reactjs.org/) to compose different parts (variable select, map and bar plot).
 - UI components are adapted from [Ant Design](https://ant.design/docs/react/introduce).
