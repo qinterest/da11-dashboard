@@ -24,9 +24,10 @@ export default class Welcome extends Component {
           <text className="headerTitle">Ocean accounts dashboard</text>
           <h2>A visualization tool for harmonizing, standardizing and structuring the ocean data</h2>
           <Space size="middle">
+          <Link to="/uploadData">
             <Button
               danger
-              disabled
+              // disabled
               type="primary"
               shape="round"
               icon={<UploadOutlined />}
@@ -34,6 +35,7 @@ export default class Welcome extends Component {
             >
               Upload data
             </Button>
+            </Link>
             <Link to="/example">
               <Button shape="round" icon={<SearchOutlined />} size="large">
                 View example

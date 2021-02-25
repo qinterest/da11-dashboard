@@ -1,31 +1,78 @@
 import React, { Component } from "react";
 import "./App.less";
 import { message, Layout } from "antd";
-import Da11Header from "./da11Component/Da11Header";
-import Da11Left from "./da11Component/Da11Left";
-import Da11Down from "./da11Component/Da11Down";
-import Da11Up from "./da11Component/Da11Up";
-import testData from "./data/data1023.js";
-// import { generate, presetPalettes } from '@ant-design/colors';
-// const colorPlatte = generate('#009edb');
+import Da11Header from "./da11Upload/Da11Header";
+import Da11Left from "./da11Upload/Da11Left";
+import Da11Down from "./da11Upload/Da11Down";
+import Da11Up from "./da11Upload/Da11Up";
+import * as d3 from "d3";
 
 const { Header, Content, Sider, Footer } = Layout;
-const data = testData;
 
-export default class Dashboard extends Component {
+export default class UploadDashboard extends Component {
   state = {
+    data: [],
+    columns: [],
     collapsed: false,
-    selectVar: "var1-1",
+    viewMode: "Time Series",
+    selectVar: "Env0",
     viewVar: "",
     comparedVar: [],
-    currentYr: "2019",
-    comparedYr: "2010",
+    currentYr: "2001",
+    comparedYr: "2001",
     noVis: true,
   };
+
+  componentWillMount() {
+    this.getCsvData();
+  }
+
+  async getCsvData() {
+    let csvData = await d3.csv("Book1.csv").then(function (data) {
+      var envIx = 0,
+        ecoIx = 0,
+        socIx = 0;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i]["Category"] === "Economic") {
+          data[i].key = "Eco" + envIx.toString();
+          ecoIx++;
+        }
+        if (data[i]["Category"] === "Environment") {
+          data[i].key = "Env" + envIx.toString();
+          envIx++;
+        }
+        if (data[i]["Category"] === "Social") {
+          data[i].key = "Soc" + envIx.toString();
+          socIx++;
+        }
+      }
+      return data;
+    });
+
+    this.setState({
+      data: csvData,
+    });
+    console.log(csvData);
+    var cols = csvData.columns;
+    var delIndex = cols.indexOf("Category");
+    cols.splice(delIndex, 1);
+    delIndex = cols.indexOf("Indicator");
+    cols.splice(delIndex, 1);
+
+    this.setState({
+      columns: cols,
+    });
+  }
 
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
+    });
+  };
+
+  changeView = (value) => {
+    this.setState({
+      viewMode: value,
     });
   };
 
@@ -81,8 +128,8 @@ export default class Dashboard extends Component {
       noVis: false,
     });
 
-    const viewObj = data.filter((d) => d.key.toString() === sv)[0];
-    message.info(`View ${viewObj.name}`);
+    const viewObj = this.state.data.filter((d) => d.key === sv)[0];
+    message.info(`View ${viewObj.Indicator}`);
 
     let cv = [];
     if (!cv.includes(sv)) {
@@ -101,8 +148,8 @@ export default class Dashboard extends Component {
       this.setState({
         comparedVar: cv,
       });
-      const viewObj = data.filter((d) => d.key.toString() === sv)[0];
-      message.info(`Add ${viewObj.name} for comparision`);
+      const viewObj = this.state.data.filter((d) => d.key === sv)[0];
+      message.info(`Add ${viewObj.Indicator} for comparision`);
     }
   };
 
@@ -112,7 +159,7 @@ export default class Dashboard extends Component {
         <Header
           style={{ height: 64, backgroundColor: "#009edb", paddingLeft: "8px" }}
         >
-          <Da11Header changeCurrentYr={this.changeCurrentYr} />
+          <Da11Header />
         </Header>
         <Layout>
           <Sider
@@ -129,7 +176,7 @@ export default class Dashboard extends Component {
               viewSelected={this.viewSelected}
               addSelected={this.addSelected}
               selectVar={this.state.selectVar}
-              data={data}
+              data={this.state.data}
             />
           </Sider>
           <Layout>
@@ -141,12 +188,7 @@ export default class Dashboard extends Component {
                       className="site-layout-background"
                       style={{ minHeight: 510 }}
                     >
-                      <Da11Up
-                        viewVar={this.state.viewVar}
-                        data={data.filter((d) =>
-                          this.state.comparedVar.includes(d.key)
-                        )}
-                      />
+                      <Da11Up />
                     </div>
                   </Content>
                   <Content style={{ height: 280 }}>
@@ -155,15 +197,18 @@ export default class Dashboard extends Component {
                       style={{ minHeight: 280 }}
                     >
                       <Da11Down
+                        data={this.state.data.filter((d) =>
+                            this.state.comparedVar.includes(d.key)
+                          )}
+                        cols={this.state.columns}
+                        viewMode={this.state.viewMode}
+                        changeView={this.changeView}
                         viewVar={this.state.viewVar}
                         comparedVar={this.state.comparedVar}
                         comparedYr={this.state.comparedYr}
                         currentYr={this.state.currentYr}
                         changeComparedYr={this.changeComparedYr}
                         changeCurrentYr={this.changeCurrentYr}
-                        data={data.filter((d) =>
-                          this.state.comparedVar.includes(d.key)
-                        )}
                       />
                     </div>
                   </Content>

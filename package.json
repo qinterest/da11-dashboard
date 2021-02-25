@@ -9,14 +9,16 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.6.3",
-    "d3": "6.1.1",
     "craco-less": "^1.17.0",
+    "d3": "6.1.1",
+    "ol": "6.4.3",
+    "ol-layerswitcher": "3.7.0",
+    "papaparse": "^5.3.0",
     "react": "^16.13.1",
+    "react-csv-reader": "^3.2.0",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
     "react-router-dom": "5.2.0",
-    "ol":"6.4.3",
-    "ol-layerswitcher":"3.7.0"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "craco start",

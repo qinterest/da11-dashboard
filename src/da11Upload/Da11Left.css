@@ -1,0 +1,23 @@
+
+.menuTitle {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+/*    font-weight: bold;*/
+    }
+
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo {
+    background-image: url("../escap_n2.png");
+    background-size: 170px;
+    background-repeat: no-repeat;
+}
+
+
+.sideButton{
+	margin-top: 5px;
+}
