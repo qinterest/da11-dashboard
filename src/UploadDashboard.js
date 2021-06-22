@@ -28,7 +28,7 @@ export default class UploadDashboard extends Component {
   }
 
   async getCsvData() {
-    let csvData = await d3.csv("Book1.csv").then(function (data) {
+    let csvData = await d3.csv("TestData.csv").then(function (data) {
       var envIx = 0,
         ecoIx = 0,
         socIx = 0;

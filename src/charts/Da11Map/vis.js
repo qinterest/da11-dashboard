@@ -93,6 +93,23 @@ const draw = (props) => {
   });
   map.addLayer(satellite);
   map.addLayer(QuangNinh);
+  map.addLayer(
+    new VectorLayer({
+      source: new VectorSource({
+        url: "./geodata/mangroves-2015.geojson",
+        format: new GeoJSON(),
+      }),
+      visible: true,
+      title: "mangrovesSHP",
+      style: new Style({
+        fill: new Fill({
+          color: "#ffffbf",
+        }),
+      }),
+    })
+  );
+
+
   // if (props.dataVis.data) {
   //   const viewVar = props.dataVis.viewVar.toString(),
   //     data = props.dataVis.data;

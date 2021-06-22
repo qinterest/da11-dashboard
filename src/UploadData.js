@@ -50,6 +50,13 @@ export default class UploadData extends Component {
     };
     return (
       <container>
+
+        <CSVReader
+          cssClass="react-csv-input"
+          label="Upload geojson"
+          onFileLoaded={(data, fileInfo) => console.dir('hello')}
+          onError={null}
+        />
         <CSVReader
           cssClass="react-csv-input"
           label="Upload your data"

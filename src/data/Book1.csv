@@ -1,3 +1,4 @@
 Category,Indicator,2001,2002,2003
-Eco,TN,1,2,3
-Env,TP,2,4,6
+Eco,Production of fish,1,2,3
+Env,Mangrove,5,8,10
+Soc,Number Jobs by aquaculture,2,4,6
