@@ -62,24 +62,28 @@ yarn build
 ### Files & directories
 
 ```
---- build
 --- node_modules
---- public	# logos, pictures geo-spatial data.
+--- public
 --- src
-	--- charts
-		--- Da11Map	# Map components
+	--- dashboardCompoent
+		--- dashboardCharts
+			--- DifferenceChart # Plot data for the difference mode
+			--- MapChart # Plot data for the mapping pane
+			--- TimeseriesChart # Plot data for the time series mdoe
 		--- DownChart # Bar chart
-	--- da11Component
-		--- Da11Down.js	# Make bar chart
-		--- Da11Header.js	# Make Navbar
-		--- Da11Left.js	# Make variable selector
-		--- Da11Up.js	# Make Map 
-		--- DaDrawer.js	# Make info Drawer
-		--- DaMenu.js	# Automacticlly make menu by data(used by Da11Left.js)
-	--- data	# Refer to data-format for automacticlly data load and visualization
-	--- App.js	#compose dashboard and welcome page
-	--- Dashboard.js	# Compose main component
+
+	--- DashboardDown.js # Integrate the time series and the difference mdoe
+	--- DashboardDrawer.js # Make data description drawer
+	--- DashboardHeader.js # Make header
+	--- DashboardLeft.js # Make the indicator selector pane
+	--- DashboardMenu.js # Generate compoents of the indicator selector pane by input data
+	--- DashboardUp.js # Make the mapping pane
+
+	--- App.js
 	--- Welcome.js	# Make welcome page
+	--- AweDashboard.js	# Make example dashboard page
+	--- AweUpDashboard # Generate dashboard by uploaded data
+	--- UploadData.js # Make data upload page
 	--- bgvideo.mp4 # Background video for welcome page
 ```
 
@@ -97,4 +101,6 @@ yarn build
 
 ## Contributor
 
-MAO Qi([email](maoqi@pku.edu.cn) [github](https://github.com/qinterest))
+- MAO Qi([email](maoqi@pku.edu.cn) [github](https://github.com/qinterest))
+- Aahlaad Musunuru
+- Ayodele Marshall
