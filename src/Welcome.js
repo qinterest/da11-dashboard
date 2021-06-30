@@ -22,7 +22,7 @@ export default class Welcome extends Component {
     </div>*/}
         <div className="content">
           <text className="headerTitle">Ocean accounts dashboard</text>
-          <h2>A visualization tool for harmonizing, standardizing and structuring the ocean data</h2>
+          <h2>A visualization tool for harmonizing, structuring and displaying ocean-relevant data.</h2>
           <Space size="middle">
           <Link to="/uploadData">
             <Button

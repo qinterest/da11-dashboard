@@ -1,0 +1,4 @@
+geourl,title,fillcolor,strokecolor
+./geodata/mangroves-2015.geojson,Mangroves-2015,#ef8a62,
+./geodata/mangroves-2018.geojson,Mangroves-2018,#67a9cf,
+./geodata/QuangNinhBoundry.json,QuangNinh Boundry,,#333333

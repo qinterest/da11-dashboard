@@ -1,0 +1,19 @@
+body {
+  margin: 1%;
+}
+
+h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  /* color: #F2F2F2; */
+  }
+
+ul {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+}
+
+a {
+  font-style: #283891;
+}

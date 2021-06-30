@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./App.less";
-import Dashboard from "./Dashboard";
+// import Dashboard from "./Dashboard";
 import UploadData from "./UploadData";
-import UploadDashboard from "./UploadDashboard";
+import UploadDashboard from "./AweUpDashboard";
 import Welcome from "./Welcome";
+import AweDashboard from "./AweDashboard";
 
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default class App extends Component {
   render() {
@@ -14,7 +15,8 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route path="/" exact component={() => <Welcome />} />
-            <Route path="/example" exact component={() => <Dashboard />} />
+            {/* <Route path="/example" exact component={() => <Dashboard />} /> */}
+            <Route path="/example" exact component={() => <AweDashboard />} />
             <Route path="/uploadData" exact component={() => <UploadData />} />
             <Route path="/uploadDashboard" exact component={() => <UploadDashboard />} />
           </Switch>
@@ -23,3 +25,4 @@ export default class App extends Component {
     );
   }
 }
+
