@@ -3,7 +3,6 @@
 ![ESCAP-logo](https://www.unescap.org/themes/custom/escap2020/logo.png)
 ![Decade-of-ocean](https://www.unescap.org/sites/default/d8files/SDG_Decade_of_Action_E2x.png)
 
-<<<<<<< HEAD
 This product provides an interactive visualization tool (dashboard) for harmonizing, structuring and displaying ocean-relevant data. The product is based on the principle that information is more powerful when it can be readily communicated between different audiences. To this end, ESCAP Statistics Division (ESCAP-SD) developed this web-based dashboard that is able to vsualize customized statistical and geospatial data using open-source development libraries. This product provides a starting point for aiding our understanding of the Ocean Accounting Framework according to the System of Environmental-Economic Accounting (SEEA).
 
 ## Table of Contents
@@ -11,40 +10,12 @@ This product provides an interactive visualization tool (dashboard) for harmoniz
 - [ESCAP Ocean Accounting Visualization Dashboard](#escap-ocean-accounting-visualization-dashboard)
 	- [Table of Contents](#table-of-contents)
 	- [Technical guide](#technical-guide)
-		- [Introduction](#introduction)
-=======
-## Table of Contents
-
-- [DA11-dashboard](#da11-dashboard)
-	- [Table of Contents](#table-of-contents)
-	- [Introduction](#introduction)
-		- [Objective](#objective)
-		- [Main data source](#main-data-source)
-	- [Technical guide](#technical-guide)
 		- [Main tools](#main-tools)
->>>>>>> d84612a3fad6b1c34c812fecd8c7bd29590b7ea3
 		- [Usage](#usage)
 		- [Files & directories](#files--directories)
 	- [Possible future work](#possible-future-work)
 	- [Background material](#background-material)
 	- [Contributor](#contributor)
-<<<<<<< HEAD
-=======
-
-## Introduction
-
-### Objective
-
-- Highlight the importance of the ocean/ocean economy/ocean ecosystem
-- Show the comprehensiveness of ocean accounts (compared to system of national accounts)
-- Explain how statistical harmonization based on ocean accounting can be presented
-
-### Main data source
-
-- Statistical data from the General Statistic Office of Viet Nam
-- Remote sensing data
-- Geospatial data from the pilot study
->>>>>>> d84612a3fad6b1c34c812fecd8c7bd29590b7ea3
 
 ## Technical guide
 
@@ -130,10 +101,6 @@ yarn build
 
 ## Contributor
 
-<<<<<<< HEAD
 - MAO Qi([email](maoqi@pku.edu.cn) [github](https://github.com/qinterest))
-=======
-- MAO Qi([email](mailto:maoqi@pku.edu.cn) [github](https://github.com/qinterest))
->>>>>>> d84612a3fad6b1c34c812fecd8c7bd29590b7ea3
 - Aahlaad Musunuru
 - Ayodele Marshall
