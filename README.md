@@ -101,6 +101,6 @@ yarn build
 
 ## Contributor
 
-- MAO Qi([email](maoqi@pku.edu.cn) [github](https://github.com/qinterest))
+- MAO Qi([email](mailto:maoqi@pku.edu.cn) [github](https://github.com/qinterest))
 - Aahlaad Musunuru
 - Ayodele Marshall
